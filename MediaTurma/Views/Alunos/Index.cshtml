@@ -1,0 +1,85 @@
+﻿@model IEnumerable<MediaTurma.Models.Alunos>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.NomeAluno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nota1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nota2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nota3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nota4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MediaAlunos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Faltas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusCurso)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeAluno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nota1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nota2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nota3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nota4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MediaAlunos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Faltas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusCurso)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { nomeAluno = item.NomeAluno }) |
+                @Html.ActionLink("Details", "Details", new { nomeAluno=item.NomeAluno }) |
+                @Html.ActionLink("Delete", "Delete", new { nomeAluno=item.NomeAluno })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
